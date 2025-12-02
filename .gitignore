@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+vendor/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+
+# Uploaded Images (kecuali default)
+assets/images/books/*
+!assets/images/books/default.jpg
+!assets/images/books/default.jpg.html
+
+# Troubleshooting Tools (jangan di-commit ke production)
+FIX_DATABASE_NOW.php
+fix_database_structure.php
+check_database.php
+reset_admin_password.php
+fix_isbn_column.sql
+
+# Database dumps
+*.sql.backup
+dump.sql
+
+# Environment files
+.env
+.env.local

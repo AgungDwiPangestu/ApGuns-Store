@@ -73,62 +73,118 @@ Munif/
 
 ## 🛠️ Instalasi
 
-### Persyaratan:
+### Persyaratan Sistem:
 
 - PHP 7.4 atau lebih tinggi
 - MySQL 5.7 atau lebih tinggi
-- Web server (Apache/Nginx) - Laragon sudah include ini
+- Web server (Apache/Nginx)
+- Git (untuk clone repository)
 - Browser modern
 
 ### Langkah Instalasi:
 
-1. **Clone atau copy project ke folder Laragon**
+#### **1. Clone Repository**
 
-   ```
-   Folder: c:\laragon\www\Munif
-   ```
+Buka terminal/command prompt dan jalankan:
 
-2. **Jalankan Installer Otomatis (RECOMMENDED)**
+```bash
+git clone https://github.com/AgungDwiPangestu/Munif-Store.git
+```
 
-   - Buka browser dan akses: `http://localhost/Munif/install.php`
-   - Installer akan otomatis:
-     - Membuat database `munif_store`
-     - Membuat semua tabel
-     - Mengisi data sample (kategori, buku, admin)
-   - Setelah selesai, klik tombol "Ke Homepage"
+#### **2. Pindahkan ke Web Server Directory**
 
-   **ATAU Install Manual:**
+**Untuk Laragon (Windows):**
 
-3. **Import Database Manual (Alternatif)**
+```bash
+# Pindahkan folder hasil clone ke:
+C:\laragon\www\
+```
 
-   - Buka phpMyAdmin (http://localhost/phpmyadmin)
-   - Buat database baru bernama `munif_store`
-   - Import file `database.sql` yang ada di root project
-   - Database akan otomatis terisi dengan:
-     - Struktur tabel lengkap
-     - Data kategori sample
-     - Data buku sample
-     - User admin (username: admin, password: admin123)
+**Untuk XAMPP (Windows):**
 
-4. **Konfigurasi Database** (Sudah otomatis)
+```bash
+# Pindahkan folder hasil clone ke:
+C:\xampp\htdocs\
+```
 
-   - File `config/db.php` sudah dikonfigurasi untuk Laragon default:
-     ```php
-     DB_HOST: localhost
-     DB_USER: root
-     DB_PASS: (kosong)
-     DB_NAME: munif_store
-     ```
-   - Jika perlu, sesuaikan dengan konfigurasi MySQL Anda
+**Untuk XAMPP/LAMPP (Linux/Mac):**
 
-5. **Set Permissions (Opsional untuk Windows)**
+```bash
+# Pindahkan folder hasil clone ke:
+/opt/lampp/htdocs/
+```
 
-   - Pastikan folder `assets/images/books/` memiliki permission write
-   - Untuk upload gambar buku
+Atau langsung clone ke folder tersebut:
 
-6. **Akses Website**
-   - Buka browser dan akses: `http://localhost/Munif`
-   - Homepage akan muncul
+```bash
+# Untuk Laragon
+cd C:\laragon\www
+git clone https://github.com/AgungDwiPangestu/Munif-Store.git Munif
+
+# Untuk XAMPP Windows
+cd C:\xampp\htdocs
+git clone https://github.com/AgungDwiPangestu/Munif-Store.git Munif
+
+# Untuk XAMPP Linux/Mac
+cd /opt/lampp/htdocs
+git clone https://github.com/AgungDwiPangestu/Munif-Store.git Munif
+```
+
+#### **3. Jalankan Web Server**
+
+**Laragon:**
+
+- Klik tombol "Start All" di Laragon
+- Pastikan Apache dan MySQL aktif (hijau)
+
+**XAMPP:**
+
+- Buka XAMPP Control Panel
+- Klik "Start" pada Apache
+- Klik "Start" pada MySQL
+
+#### **4. Jalankan Installer Otomatis** ⚡
+
+Buka browser dan akses URL berikut:
+
+```
+http://localhost/Munif/install.php
+```
+
+Installer akan **otomatis**:
+
+- ✅ Membuat database `munif_store`
+- ✅ Membuat semua tabel yang diperlukan
+- ✅ Mengisi data sample (kategori, buku)
+- ✅ Membuat user admin default
+
+**Tunggu sampai proses selesai**, lalu klik tombol **"Ke Homepage"**
+
+#### **5. Selesai!** 🎉
+
+Website sudah siap digunakan. Akses:
+
+```
+http://localhost/Munif
+```
+
+> **💡 Catatan:**
+>
+> - Tidak perlu import database manual
+> - Tidak perlu konfigurasi apapun
+> - Semua sudah otomatis dengan `install.php`
+> - Jika menggunakan port custom, sesuaikan URL (misal: `http://localhost:8080/Munif`)
+
+### Konfigurasi Manual (Opsional)
+
+Jika konfigurasi database Anda berbeda dari default, edit file `config/db.php`:
+
+```php
+define('DB_HOST', 'localhost');    // Host database
+define('DB_USER', 'root');         // Username MySQL
+define('DB_PASS', '');             // Password MySQL (kosong untuk default)
+define('DB_NAME', 'munif_store');  // Nama database
+```
 
 ## 👤 Login Credentials
 

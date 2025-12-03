@@ -8,7 +8,7 @@
         </div>
 
         <div class="nav-search">
-            <form action="/Munif/pages/search.php" method="GET">
+            <form action="/Munif/pages/books.php" method="GET">
                 <input type="text" name="q" placeholder="Cari buku, penulis, atau penerbit..." required>
                 <button type="submit"><i class="fas fa-search"></i></button>
             </form>

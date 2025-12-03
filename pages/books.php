@@ -19,7 +19,14 @@ if ($category_id > 0) {
 }
 
 if (!empty($search)) {
-    $query .= " AND (b.title LIKE '%$search%' OR b.author LIKE '%$search%' OR b.publisher LIKE '%$search%')";
+    // Cari di judul, penulis, penerbit, ISBN, dan deskripsi
+    $search_safe = mysqli_real_escape_string($conn, $search);
+    $query .= " AND ("
+        . "b.title LIKE '%$search_safe%'"
+        . " OR b.author LIKE '%$search_safe%'"
+        . " OR b.publisher LIKE '%$search_safe%'"
+        . " OR b.isbn LIKE '%$search_safe%'"
+        . " OR b.description LIKE '%$search_safe%')";
 }
 
 $query .= " ORDER BY b.title ASC";

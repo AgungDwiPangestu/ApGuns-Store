@@ -78,22 +78,15 @@ CREATE TABLE cart (
 -- Insert sample categories
 INSERT INTO categories (name, description) VALUES
 ('Fiksi', 'Novel dan cerita fiksi'),
-('Non-Fiksi', 'Buku berdasarkan fakta dan pengetahuan'),
-('Teknologi', 'Buku tentang teknologi dan pemrograman'),
-('Bisnis', 'Buku tentang bisnis dan keuangan'),
-('Pendidikan', 'Buku pelajaran dan edukatif'),
-('Religi', 'Buku keagamaan'),
-('Komik', 'Komik dan manga');
+('Non-Fiksi', 'Buku berbasis fakta dan pengetahuan'),
+('Teknologi', 'Pemrograman, IT, dan inovasi digital'),
+('Bisnis & Ekonomi', 'Manajemen, finansial, dan strategi bisnis'),
+('Pendidikan', 'Buku ajar, referensi akademik, dan pedagogi'),
+('Religi & Spiritual', 'Kajian agama dan spiritualitas'),
+('Komik & Manga', 'Komik, manga, dan graphic novel'),
+('Sains', 'Fisika, kimia, biologi, dan ilmu alam');
 
 -- Insert admin user (password will be set by installer)
 -- Temporary hash, akan di-update oleh install.php
 INSERT INTO users (username, email, password, full_name, role) VALUES
 ('admin', 'admin@munifstore.com', 'temp_will_be_updated', 'Administrator', 'admin');
-
--- Insert sample books
-INSERT INTO books (title, author, isbn, category_id, publisher, publication_year, description, price, stock, image) VALUES
-('Laskar Pelangi', 'Andrea Hirata', '9789793062792', 1, 'Bentang Pustaka', 2005, 'Novel tentang perjuangan anak-anak Belitung dalam menempuh pendidikan', 85000, 50, 'laskar-pelangi.jpg'),
-('Bumi Manusia', 'Pramoedya Ananta Toer', '9789799731234', 1, 'Hasta Mitra', 1980, 'Novel sejarah tentang masa kolonial Belanda', 95000, 30, 'bumi-manusia.jpg'),
-('Clean Code', 'Robert C. Martin', '9780132350884', 3, 'Prentice Hall', 2008, 'Panduan menulis kode yang bersih dan maintainable', 550000, 25, 'clean-code.jpg'),
-('The Lean Startup', 'Eric Ries', '9780307887894', 4, 'Crown Business', 2011, 'Strategi membangun bisnis startup yang sukses', 250000, 40, 'lean-startup.jpg'),
-('Sapiens', 'Yuval Noah Harari', '9780062316097', 2, 'Harper', 2015, 'Sejarah singkat umat manusia', 180000, 35, 'sapiens.jpg');
